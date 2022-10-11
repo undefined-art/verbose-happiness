@@ -106,6 +106,8 @@ const useTimer = (props?: TimeType) => {
     hours: addZero(time.hours),
     minutes: addZero(time.minutes),
     seconds: addZero(time.seconds),
+    format: `${Number(time.hours) >= 1 ? addZero(time.hours) + ':' : ""} ${addZero(time.minutes)}:
+    ${addZero(time.seconds)}`,  
     progress,
   };
 };

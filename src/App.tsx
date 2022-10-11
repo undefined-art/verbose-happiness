@@ -1,20 +1,15 @@
-import { ChakraProvider, type ThemeConfig } from "@chakra-ui/react";
-import Timer from "./pages/timer";
+import routes from "./routes";
+import { BrowserRouter, useRoutes } from "react-router-dom";
+import "./index.css";
+import { FC } from "react";
 
-import { extendTheme } from "@chakra-ui/react";
+const ApplicationRoutes = () => useRoutes(routes);
 
-const config: ThemeConfig = {
-  initialColorMode: "dark",
-  useSystemColorMode: false,
-};
-
-const theme = extendTheme({ config });
-
-const App = () => {
+const App: FC = () => {
   return (
-    <ChakraProvider theme={theme}>
-      <Timer />
-    </ChakraProvider>
+    <BrowserRouter>
+      <ApplicationRoutes />
+    </BrowserRouter>
   );
 };
 
