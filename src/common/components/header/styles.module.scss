@@ -1,0 +1,38 @@
+@import "@assets/styles/utils/vars.scss";
+@import "@assets/styles/utils/mixins.scss";
+
+.container {
+  @include flex($just: space-between, $align: center);
+  padding: 10px 35px;
+}
+
+.logo {
+  @include flex();
+
+  & > a > svg {
+    width: 250px;
+    height: min-content;
+  }
+}
+
+.navigation {
+  @include flex($just: space-between, $align: center);
+  @include font-params(24px, 500, $white);
+
+  & > a {
+    margin-right: 25px;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  & > svg {
+    @include square(45px);
+    cursor: pointer;
+
+    &:hover {
+      @include svg-colors($red);
+    }
+  }
+}
