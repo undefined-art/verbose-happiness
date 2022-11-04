@@ -1,0 +1,37 @@
+@import "@assets/styles/utils/vars.scss";
+@import "@assets/styles/utils/mixins.scss";
+
+.dialog {
+  @include flex($just: center, $align:center);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.panel{
+  background-color: $white;
+  border-radius: $main-border-radius;
+  padding: 15px;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.title {
+  @include flex($just: space-between, $align:center);
+  @include font-params(34px, 700, $black);
+}
+
+.description {
+  @include font-params(21px, 400,  $gray);
+}
+
+.close{
+  @include square(35px);
+  cursor: pointer;
+
+  &:hover {
+    @include svg-colors($red);
+  }
+}
