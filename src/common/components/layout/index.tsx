@@ -8,7 +8,7 @@ export interface ILayout {
 }
 
 const Layout: FCC<ILayout> = ({ children, hasHeader = true }) => (
-  <div>
+  <div className="bg-gray-800">
     {hasHeader && <Header />}
     <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
     <Footer />
