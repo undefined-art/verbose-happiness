@@ -3,18 +3,22 @@ import { ReactElement, useState } from "react";
 import ModalContext from "../context";
 
 const ModalProvider: FCC = ({ children }) => {
-  const [modals, setModals] = useState<ReactElement[]>([]);
+  const [modal, setModal] = useState<ReactElement | null>(null);
 
-  const actions = {
-    push(node: ReactElement) {
-      setModals([...modals, node]);
+  const value = {
+    isModalVisible: Boolean(modal),
+    open(node: ReactElement) {
+      setModal(node);
+    },
+    close() {
+      setModal(null);
     },
   };
 
   return (
-    <ModalContext.Provider value={actions}>
+    <ModalContext.Provider value={value}>
       <>
-        {modals.map((modal) => modal)}
+        {modal}
         {children}
       </>
     </ModalContext.Provider>

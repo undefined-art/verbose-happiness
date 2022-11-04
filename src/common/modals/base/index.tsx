@@ -1,13 +1,11 @@
 import { Dialog } from "@headlessui/react";
-import { useState } from "react";
+import useModal from "@hooks/use-modal";
 
 const Modal = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const onClose = () => setIsOpen(false);
+  const { close, isModalVisible } = useModal();
 
   return (
-    <Dialog open={isOpen} onClose={onClose}>
+    <Dialog open={isModalVisible} onClose={close}>
       <Dialog.Panel>
         <Dialog.Title>Deactivate account</Dialog.Title>
         <Dialog.Description>
@@ -19,8 +17,8 @@ const Modal = () => {
           will be permanently removed. This action cannot be undone.
         </p>
 
-        <button onClick={onClose}>Deactivate</button>
-        <button onClick={onClose}>Cancel</button>
+        <button onClick={close}>Deactivate</button>
+        <button onClick={close}>Cancel</button>
       </Dialog.Panel>
     </Dialog>
   );

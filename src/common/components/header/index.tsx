@@ -5,9 +5,9 @@ import { ReactComponent as LogoIcon } from "../../../assets/icons/logo.svg";
 import { ReactComponent as PersonIcon } from "../../../assets/icons/person.svg";
 
 const Header = () => {
-  const { push } = useModal();
+  const { open } = useModal();
 
-  const onClick = () => push(<Modal />);
+  const onClick = () => open(<Modal />);
 
   return (
     <div className="container max-w-7xl h-20 mx-auto px-4 py-2 columns-2 flex justify-between items-center font-mono">
