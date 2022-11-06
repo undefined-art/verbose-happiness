@@ -1,7 +1,6 @@
-import type { RouteObject } from "react-router-dom";
-import AuthGateway from "@components/auth-gateway";
-import Layout from "@components/layout";
-import type { IRoute } from "../../interfaces/router/i-route";
+import type { RouteObject } from 'react-router-dom';
+import AuthGateway from '@components/auth-gateway';
+import Layout from '@components/layout';
 
 const buildRoutes = (routes: any[]): RouteObject[] | undefined =>
   routes?.map((route) => {
