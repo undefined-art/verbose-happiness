@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { FCC } from "@interfaces/react/fc-with-children";
 import Header from "../header";
 import { Helmet } from "react-helmet";
+import "./styles.module.scss";
 
 export interface ILayout {
   isHeaderVisible?: boolean;
@@ -14,7 +15,7 @@ const Layout: FCC<ILayout> = ({
   title = "Verbose Happiness",
   isHeaderVisible = true,
 }) => (
-  <div className="bg-gray-800">
+  <main>
     <Helmet>
       <meta charSet="utf-8" />
       <title>{title}</title>
@@ -22,7 +23,7 @@ const Layout: FCC<ILayout> = ({
     {isHeaderVisible && <Header />}
     <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
     <Footer />
-  </div>
+  </main>
 );
 
 export default Layout;
