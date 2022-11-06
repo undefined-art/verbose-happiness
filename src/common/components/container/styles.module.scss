@@ -1,0 +1,17 @@
+@import "@assets/styles/utils/vars.scss";
+@import "@assets/styles/utils/mixins.scss";
+
+.outer {
+  width: 100vw;
+}
+
+.fullSize {
+  height: calc(100vh - 98.433px);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: auto;
+  padding-right: 3%;
+  padding-left: 3%;
+}

@@ -1,9 +1,15 @@
 @import "@assets/styles/utils/vars.scss";
 @import "@assets/styles/utils/mixins.scss";
 
-.container {
+.outer {
+  border: 2px solid $secondary;
+  user-select: none;
+}
+
+.inner {
   @include flex($just: space-between, $align: center);
-  padding: 10px 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logo {
@@ -12,6 +18,7 @@
   & > a > svg {
     width: 250px;
     height: min-content;
+    @include svg-colors($white);
   }
 }
 
@@ -27,12 +34,18 @@
     }
   }
 
-  & > svg {
-    @include square(45px);
+  & svg {
+    @include square(38px);
+    @include svg-colors($white);
     cursor: pointer;
 
     &:hover {
       @include svg-colors($red);
     }
+  }
+
+  & svg + svg {
+    @include square(45px);
+    margin-left: 15px;
   }
 }
