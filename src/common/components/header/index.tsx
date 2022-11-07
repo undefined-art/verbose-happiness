@@ -13,20 +13,22 @@ const Header = () => {
   const onClick = () => open(<Modal />);
 
   return (
-    <Container innerClassName={styles.inner} outerClassName={styles.outer}>
-      <div className={styles.logo}>
-        <Link to="/">
-          <LogoIcon />
-        </Link>
-      </div>
+    <header>
+      <Container innerClassName={styles.inner} outerClassName={styles.outer}>
+        <div className={styles.logo}>
+          <Link to="/">
+            <LogoIcon />
+          </Link>
+        </div>
 
-      <div className={styles.navigation}>
-        <NavLink to="/docs">Docs</NavLink>
+        <div className={styles.navigation}>
+          <NavLink to="/docs">Docs</NavLink>
 
-        <PersonIcon onClick={onClick} />
-        <AdjustmentsIcon />
-      </div>
-    </Container>
+          <PersonIcon onClick={onClick} />
+          <AdjustmentsIcon />
+        </div>
+      </Container>
+    </header>
   );
 };
 
