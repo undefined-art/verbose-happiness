@@ -1,0 +1,61 @@
+@import "@assets/styles/utils/vars.scss";
+@import "@assets/styles/utils/mixins.scss";
+
+.outer {
+  border: 2px solid $secondary;
+}
+
+.inner {
+  position: relative;
+  padding: 25px 3%;
+}
+
+.links {
+  @include flex();
+  position: absolute;
+  top: -35px;
+  right: 3%;
+
+  & svg {
+    margin: 0 5px;
+    @include square(35px);
+    @include svg-colors($white);
+  }
+}
+
+.content {
+  @include flex($just: space-between, $align: center);
+
+  & > div:first-of-type {
+    @include font-params(24px, 400, $white);
+
+    & > span {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  & > div + div {
+    @include flex($dir: column, $align: flex-start);
+    margin-left: 50px;
+    & > span {
+      @include font-params(24px, 600, $white);
+      margin-bottom: 5px;
+    }
+
+    & dt {
+      @include font-params(22px, 400, $white);
+      text-align: left;
+
+      &:before {
+        content: "\261E";
+        @include font-params(35px);
+        margin-right: 10px;
+      }
+
+      a:hover {
+        color: $red;
+      }
+    }
+  }
+}

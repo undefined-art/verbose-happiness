@@ -7,6 +7,7 @@ import "./styles.module.scss";
 
 export interface ILayout {
   isHeaderVisible?: boolean;
+  isFooterVisible?: boolean;
   title?: string;
 }
 
@@ -14,6 +15,7 @@ const Layout: FCC<ILayout> = ({
   children,
   title = "Verbose Happiness",
   isHeaderVisible = true,
+  isFooterVisible = true,
 }) => (
   <main>
     <Helmet>
@@ -22,7 +24,7 @@ const Layout: FCC<ILayout> = ({
     </Helmet>
     {isHeaderVisible && <Header />}
     <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
-    <Footer />
+    {isFooterVisible && <Footer />}
   </main>
 );
 

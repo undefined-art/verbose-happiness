@@ -27,7 +27,7 @@ header {
 }
 
 .feature {
-  @include flex($dir: column);
+  @include flex($dir: column, $just: center, $align: flex-start);
   border: 2px solid $secondary;
   padding: 20px;
   border-radius: $main-border-radius;

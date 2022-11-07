@@ -6,11 +6,11 @@
 }
 
 .fullSize {
-  height: calc(100vh - 98.433px);
+  height: calc(100vh - (98.433px + 296px));
 }
 
 .inner {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: auto;
   padding-right: 3%;
   padding-left: 3%;
